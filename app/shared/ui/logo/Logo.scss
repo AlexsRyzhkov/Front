@@ -1,0 +1,57 @@
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--color-primary);
+
+    user-select: none;
+}
+
+.logo-auth {
+    .logo__icon {
+        font-size: 46px;
+
+        font-variation-settings: 'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    .logo__title {
+        font-size: 32px;
+        font-weight: bold;
+        color: var(--color-primary);
+        text-transform: uppercase;
+    }
+}
+
+.logo-default {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    gap: 5px;
+
+    &:hover {
+        background: var(--color-light-gray);
+    }
+
+    &:active {
+        background: var(--color-light-gray-focuse);
+    }
+
+    .logo__icon {
+        font-size: 25px;
+
+        font-variation-settings: 'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+
+    .logo__title {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--color-primary-dark);
+    }
+}

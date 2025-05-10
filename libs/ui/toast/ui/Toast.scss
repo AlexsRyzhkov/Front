@@ -1,0 +1,28 @@
+.fox-task-toast {
+    pointer-events: none;
+
+    position: fixed;
+    bottom: 60px;
+    left: 100px;
+
+    width: 400px;
+    height: 200px;
+
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        pointer-events: auto;
+    }
+
+
+    &__close-all {
+        pointer-events: auto;
+
+        margin-bottom: 10px;
+
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,32 @@
+.table-body {
+    border-top: 1.5px solid var(--color-table-border-head);
+    border-bottom: 1.5px solid var(--color-table-border-head);
+
+    &__row {
+
+    }
+
+    &__cell {
+    }
+
+    &__cell-content {
+        display: flex;
+        align-items: start;
+
+        padding: 15px;
+
+        font-size: 15px;
+        font-weight: 500;
+
+        cursor: pointer;
+        color: var(--color-table-text-head);
+
+        &:hover {
+            background-color: var(--color-light-gray-hover);
+        }
+
+        &:active {
+            background-color: var(--color-light-gray-active);
+        }
+    }
+}

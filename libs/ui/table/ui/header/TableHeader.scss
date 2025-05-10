@@ -1,0 +1,38 @@
+.table-header {
+
+    &__row {
+    }
+
+    &__cell {
+    }
+
+    &__cell-content {
+        display: flex;
+        align-items: start;
+
+        padding: 15px;
+
+        font-size: 14px;
+        color: var(--color-table-text-head);
+        font-weight: 500;
+
+        & > span {
+            font-weight: 300;
+            color: var(--color-table-text-head);
+        }
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--color-light-gray-hover);
+        }
+
+        &:active {
+            background-color: var(--color-light-gray-active);
+        }
+    }
+
+    &__cell-content-sort-icon {
+        transform: rotate(90deg);
+    }
+}

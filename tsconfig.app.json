@@ -1,0 +1,34 @@
+{
+	"compilerOptions": {
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"skipLibCheck": true,
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"allowSyntheticDefaultImports": true,
+		"isolatedModules": true,
+		"moduleDetection": "force",
+		"strictNullChecks": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"baseUrl": "./",
+		"strict": true,
+		"paths": {
+			"@app/*": ["app/app/*"],
+			"@widget/*": ["app/widgets/*"],
+			"@features/*": ["app/features/*"],
+			"@entities/*": ["app/entities/*"],
+			"@pages/*": ["app/pages/*"],
+			"@shared/*": ["app/shared/*"],
+
+            /// Для библиотеки
+			"@ui-kit/*": ["libs/ui/*"],
+			"@lib-store/*": ["libs/store/*"],
+			"@lib-enums/*": ["libs/enums/*"]
+		}
+	},
+	"include": ["app", "libs"]
+}

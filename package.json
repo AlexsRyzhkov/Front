@@ -1,0 +1,62 @@
+{
+    "name": "app",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "lint": "eslint app",
+        "preview": "vite preview",
+        "storybook": "storybook dev -p 6006",
+        "build-storybook": "storybook build"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^5.0.1",
+        "@tanstack/react-query": "^5.71.1",
+        "@tanstack/react-query-devtools": "^5.71.1",
+        "@tanstack/react-router": "^1.114.29",
+        "clsx": "^2.1.1",
+        "immer": "^10.1.1",
+        "motion": "^12.9.4",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-hook-form": "^7.55.0",
+        "uuid": "^11.1.0",
+        "zod": "^3.24.2",
+        "zustand": "^5.0.3"
+    },
+    "devDependencies": {
+        "@chromatic-com/storybook": "^3.2.6",
+        "@eslint/js": "^9.21.0",
+        "@storybook/addon-essentials": "^8.6.11",
+        "@storybook/addon-onboarding": "^8.6.11",
+        "@storybook/blocks": "^8.6.11",
+        "@storybook/experimental-addon-test": "^8.6.11",
+        "@storybook/react": "^8.6.11",
+        "@storybook/react-vite": "^8.6.11",
+        "@storybook/test": "^8.6.11",
+        "@tanstack/react-router-devtools": "^1.114.29",
+        "@tanstack/router-plugin": "^1.114.30",
+        "@types/node": "^22.13.14",
+        "@types/react": "^19.0.10",
+        "@types/react-dom": "^19.0.4",
+        "@vitejs/plugin-react": "^4.3.4",
+        "@vitest/browser": "^3.1.1",
+        "@vitest/coverage-v8": "^3.1.1",
+        "eslint-plugin-storybook": "^0.12.0",
+        "globals": "^15.15.0",
+        "playwright": "^1.51.1",
+        "sass": "^1.86.3",
+        "storybook": "^8.6.11",
+        "typescript": "~5.7.2",
+        "typescript-eslint": "^8.24.1",
+        "vite": "6.3.4",
+        "vitest": "^3.1.1"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:storybook/recommended"
+        ]
+    }
+}
