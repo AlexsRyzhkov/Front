@@ -1,0 +1,17 @@
+.splitter-divider {
+    width: 3px;
+    height: inherit;
+
+    margin: 0 2px;
+
+    box-sizing: border-box;
+
+    cursor: col-resize;
+
+    background: #e9ecef;
+
+    &--dragging {
+        transition: 0.2s;
+        background: #9fb9df;
+    }
+}

@@ -1,0 +1,27 @@
+.project-task-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+
+    max-height: 100%;
+    overflow: auto;
+
+
+    box-shadow: -1px 8px 2px 0px rgba(0, 0, 0, 0), 0px 5px 2px 0px rgba(0, 0, 0, 0.01), 0px 3px 2px 0px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(0, 0, 0, 0.09), 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
+
+    padding: 12px;
+
+    position: relative;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+
+
+        gap: 12px;
+
+        flex: 1;
+    }
+}

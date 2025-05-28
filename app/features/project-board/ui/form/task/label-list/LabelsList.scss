@@ -1,0 +1,16 @@
+.labels-list {
+    display: flex;
+
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &__label {
+        padding: 3px 8px;
+        color: white;
+
+        font-weight: 400;
+
+        border-radius: 2px;
+        background: #579DFF;
+    }
+}

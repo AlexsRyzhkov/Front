@@ -6,14 +6,10 @@ import { useTableContext } from "@ui-kit/table/ui/context/TableContext";
 
 import '@ui-kit/table/ui/footer/TableFooter.scss';
 
-interface ITableFooterProps {
-	onChangePage?: (page: number) => void;
-}
+interface ITableFooterProps {}
 
 export const TableFooter: FC<ITableFooterProps> = ({}) => {
-	const { paginator, setPage } = useTableContext();
-
-	console.log(paginator.totalPage);
+	const { paginator, page, totalPages, setPage } = useTableContext();
 
 	return (
 		<tfoot className={'table-foot'}>
@@ -22,8 +18,8 @@ export const TableFooter: FC<ITableFooterProps> = ({}) => {
 				<td className={clsx('table-foot__cell')}>
 					<div className={'table-foot__paginator'}>
 						<Paginator
-							currentPage={paginator?.page}
-							totalPages={paginator?.totalPage}
+							currentPage={page}
+							totalPages={totalPages}
 							onPageChange={setPage}
 						/>
 					</div>

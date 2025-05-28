@@ -17,14 +17,10 @@ export const PaginatorPageButton: FC<IPaginatorPageButtonProps> = ({
 	onPageChange,
 }) => {
 	const PageButton = () => (
-		<Button
-			className={'paginator-page-btn__btn'}
-			onClick={() => onPageChange(page)}
-		>
+		<Button className={'paginator-page-btn__btn'} onClick={() => onPageChange(page)}>
 			{page}
 		</Button>
 	);
-
 
 	return (
 		<motion.div className={'paginator-page-btn'} initial={false}>

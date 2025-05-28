@@ -1,0 +1,53 @@
+.label-list {
+    max-width: 300px;
+
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    min-width: 400px;
+
+    padding: 15px 0 0 0;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    &__label {
+        padding: 5px 15px;
+        background: #1D7AFC;
+        color: white;
+
+        width: fit-content;
+
+        border-radius: 5px;
+
+        display: flex;
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    &__delete {
+        cursor: pointer;
+
+        padding: 1px;
+
+
+        &:hover {
+            background: rgba(90, 107, 139, 0.4);
+            border-radius: 5px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        gap: 10px;
+
+        justify-content: end;
+    }
+}

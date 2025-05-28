@@ -1,0 +1,17 @@
+.projects-form {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 500px;
+
+    gap: 10px;
+
+    &__btn {
+        margin-top: 20px;
+
+        display: flex;
+        gap: 10px;
+
+        justify-content: end;
+    }
+}

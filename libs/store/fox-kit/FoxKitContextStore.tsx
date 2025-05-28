@@ -7,8 +7,11 @@ export const createFoxKitStore = () => {
 	return createStore<TTFoxKitStore>()(
 		immer((set) => ({
 			refModalContainer: null,
+			refDropDownContainer: null,
 
-			setRefModalContainer: (el) => set((state) => ({ refModalContainer: el })),
+
+			setRefModalContainer: (el) => set(() => ({ refModalContainer: el })),
+			setRefDropDownContainer: (el) => set(() => ({ refDropDownContainer: el })),
 		})),
 	);
 };

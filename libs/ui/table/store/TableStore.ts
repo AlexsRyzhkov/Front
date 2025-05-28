@@ -1,63 +1,96 @@
 import { createStore } from "zustand";
-import { v4 as uuidv4 } from 'uuid';
 import { ITableStore, ITableStoreParams } from "@ui-kit/table/store/TableStore.type";
 import { immer } from "zustand/middleware/immer";
 
 interface ICreateTableParams extends ITableStoreParams {}
 
 export const createTableStore = ({
-	loading,
-	paginator,
 	data = [],
 	columns,
+
+	loading,
+
+	paginator,
+	rows,
+	first,
+	totalPages,
 	onChangePage,
+
+	hover,
+	onRowClick,
+	onCellClick,
 }: ICreateTableParams) => {
 	return createStore<ITableStore>()(
 		immer(
 			(set) => ({
 				data: data,
 
-				loading: loading,
-				paginator: {
-					page: paginator?.page || 1,
-					perPage: paginator?.perPage || 10,
-					totalPage: paginator?.totalPage || Math.ceil(data?.length / (paginator?.perPage || 10)) || 1,
-				},
-
 				headers: columns.map((column) => ({
-					id: uuidv4(),
 					name: column.header,
 					sortable: !!column.sortable,
+					sort: column.sort ?? null,
+					template: column.templateHeaderCell ?? null,
+					align: column.align ?? 'start',
 				})),
 				fields: columns.map((column) => ({
-					id: uuidv4(),
 					name: column.field,
+					template: column.templateBodyCell ?? null,
+					align: column.align ?? 'start',
 				})),
 
-				setPage: (page) => set((state) => {
-					if (state.paginator) {
-						state.paginator.page = page;
+				loading: loading,
 
-						if (onChangePage) {
-							onChangePage(page);
-						}
-					}
+				paginator: paginator,
+				page: first,
+				rows: rows,
+				totalPages: totalPages,
+				onChangePage: onChangePage,
+
+				hover: hover,
+				onRowClick: onRowClick,
+				onCellClick: onCellClick,
+
+				setPage: (page) => set((state) => {
+					state.page = page;
+
+					state.onChangePage(page);
 				}),
 
-				setStore: (store) => set((state) => {
-					state.loading = store.loading;
-					state.data = store.data;
+				setHover: (hover) => set((state) => {
+					state.hover = hover;
+				}),
 
-					state.headers = store.columns.map((column) => ({
-						id: uuidv4(),
+				setData: (data) => set((state) => {
+					state.data = data;
+				}),
+
+				setOnClick: (onRowClick, onCellClick) => set((state) => {
+					state.onRowClick = onRowClick;
+					state.onCellClick = onCellClick;
+				}),
+
+				setColumns: (columns) => set((state) => {
+					state.headers = columns.map((column) => ({
 						name: column.header,
 						sortable: !!column.sortable,
+						sort: column.sort ?? null,
+						template: column.templateHeaderCell ?? null,
+						align: column.align ?? 'start',
 					}));
 
-					state.fields = store.columns.map((column) => ({
-						id: uuidv4(),
+					state.fields = columns.map((column) => ({
 						name: column.field,
+						template: column.templateBodyCell ?? null,
+						align: column.align ?? 'start',
 					}));
+				}),
+
+				setPaginator: (setting) => set((state) => {
+					state.paginator = setting.paginator;
+					state.rows = setting.rows;
+					state.page = setting.first;
+					state.totalPages = setting.totalPages;
+					state.onChangePage = setting.onChangePage;
 				}),
 			}),
 		),

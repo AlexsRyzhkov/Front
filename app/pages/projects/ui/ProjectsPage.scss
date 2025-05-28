@@ -1,0 +1,36 @@
+.projects-page {
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+
+    height: calc(100vh - 80px);
+
+    &__navigate {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__navigate-logo-input {
+        display: flex;
+        align-items: center;
+
+        gap: 30px;
+    }
+
+    &__navigate-title {
+        font-size: 24px;
+        color: var(--color-primary-dark);
+    }
+
+    &__navigate-input {
+        padding: 8px 12px;
+    }
+
+    &__navigate-btn {
+        display: flex;
+        gap: 10px;
+    }
+}

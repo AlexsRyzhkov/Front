@@ -13,10 +13,25 @@
 import { Route as rootRoute } from './../__root'
 import { Route as AuthImport } from './../auth'
 import { Route as AuthenticationImport } from './../_authentication'
+import { Route as IndexImport } from './../index'
 import { Route as AuthRegisterImport } from './../auth/register'
 import { Route as AuthLoginImport } from './../auth/login'
 import { Route as AuthConfirmCodeImport } from './../auth/confirm-code'
-import { Route as AuthenticationProjectsImport } from './../_authentication/projects'
+import { Route as AuthenticationTeamsIndexImport } from './../_authentication/teams/index'
+import { Route as AuthenticationProjectsIndexImport } from './../_authentication/projects/index'
+import { Route as AuthenticationProfileIndexImport } from './../_authentication/profile/index'
+import { Route as AuthenticationTeamsIdIndexImport } from './../_authentication/teams/$id/index'
+import { Route as AuthenticationProjectsIdBoardsBoardIdImport } from './../_authentication/projects/$id/boards/$boardId'
+import { Route as AuthenticationProjectsIdBoardsBoardIdIndexImport } from './../_authentication/projects/$id/boards/$boardId/index'
+import { Route as AuthenticationProjectsIdBoardsBoardIdTelegramImport } from './../_authentication/projects/$id/boards/$boardId/telegram'
+import { Route as AuthenticationProjectsIdBoardsBoardIdSettingsImport } from './../_authentication/projects/$id/boards/$boardId/settings'
+import { Route as AuthenticationProjectsIdBoardsBoardIdReportImport } from './../_authentication/projects/$id/boards/$boardId/report'
+import { Route as AuthenticationProjectsIdBoardsBoardIdListTaskImport } from './../_authentication/projects/$id/boards/$boardId/list-task'
+import { Route as AuthenticationProjectsIdBoardsBoardIdGitImport } from './../_authentication/projects/$id/boards/$boardId/git'
+import { Route as AuthenticationProjectsIdBoardsBoardIdCodeImport } from './../_authentication/projects/$id/boards/$boardId/code'
+import { Route as AuthenticationProjectsIdBoardsBoardIdCalendarImport } from './../_authentication/projects/$id/boards/$boardId/calendar'
+import { Route as AuthenticationProjectsIdBoardsBoardIdBoardImport } from './../_authentication/projects/$id/boards/$boardId/board'
+import { Route as AuthenticationProjectsIdBoardsBoardIdAllTaskImport } from './../_authentication/projects/$id/boards/$boardId/all-task'
 
 // Create/Update Routes
 
@@ -28,6 +43,12 @@ const AuthRoute = AuthImport.update({
 
 const AuthenticationRoute = AuthenticationImport.update({
   id: '/_authentication',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const IndexRoute = IndexImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -49,16 +70,123 @@ const AuthConfirmCodeRoute = AuthConfirmCodeImport.update({
   getParentRoute: () => AuthRoute,
 } as any)
 
-const AuthenticationProjectsRoute = AuthenticationProjectsImport.update({
-  id: '/projects',
-  path: '/projects',
+const AuthenticationTeamsIndexRoute = AuthenticationTeamsIndexImport.update({
+  id: '/teams/',
+  path: '/teams/',
   getParentRoute: () => AuthenticationRoute,
 } as any)
+
+const AuthenticationProjectsIndexRoute =
+  AuthenticationProjectsIndexImport.update({
+    id: '/projects/',
+    path: '/projects/',
+    getParentRoute: () => AuthenticationRoute,
+  } as any)
+
+const AuthenticationProfileIndexRoute = AuthenticationProfileIndexImport.update(
+  {
+    id: '/profile/',
+    path: '/profile/',
+    getParentRoute: () => AuthenticationRoute,
+  } as any,
+)
+
+const AuthenticationTeamsIdIndexRoute = AuthenticationTeamsIdIndexImport.update(
+  {
+    id: '/teams/$id/',
+    path: '/teams/$id/',
+    getParentRoute: () => AuthenticationRoute,
+  } as any,
+)
+
+const AuthenticationProjectsIdBoardsBoardIdRoute =
+  AuthenticationProjectsIdBoardsBoardIdImport.update({
+    id: '/projects/$id/boards/$boardId',
+    path: '/projects/$id/boards/$boardId',
+    getParentRoute: () => AuthenticationRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdIndexRoute =
+  AuthenticationProjectsIdBoardsBoardIdIndexImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdTelegramRoute =
+  AuthenticationProjectsIdBoardsBoardIdTelegramImport.update({
+    id: '/telegram',
+    path: '/telegram',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdSettingsRoute =
+  AuthenticationProjectsIdBoardsBoardIdSettingsImport.update({
+    id: '/settings',
+    path: '/settings',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdReportRoute =
+  AuthenticationProjectsIdBoardsBoardIdReportImport.update({
+    id: '/report',
+    path: '/report',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdListTaskRoute =
+  AuthenticationProjectsIdBoardsBoardIdListTaskImport.update({
+    id: '/list-task',
+    path: '/list-task',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdGitRoute =
+  AuthenticationProjectsIdBoardsBoardIdGitImport.update({
+    id: '/git',
+    path: '/git',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdCodeRoute =
+  AuthenticationProjectsIdBoardsBoardIdCodeImport.update({
+    id: '/code',
+    path: '/code',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdCalendarRoute =
+  AuthenticationProjectsIdBoardsBoardIdCalendarImport.update({
+    id: '/calendar',
+    path: '/calendar',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdBoardRoute =
+  AuthenticationProjectsIdBoardsBoardIdBoardImport.update({
+    id: '/board',
+    path: '/board',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
+
+const AuthenticationProjectsIdBoardsBoardIdAllTaskRoute =
+  AuthenticationProjectsIdBoardsBoardIdAllTaskImport.update({
+    id: '/all-task',
+    path: '/all-task',
+    getParentRoute: () => AuthenticationProjectsIdBoardsBoardIdRoute,
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
     '/_authentication': {
       id: '/_authentication'
       path: ''
@@ -72,13 +200,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/auth'
       preLoaderRoute: typeof AuthImport
       parentRoute: typeof rootRoute
-    }
-    '/_authentication/projects': {
-      id: '/_authentication/projects'
-      path: '/projects'
-      fullPath: '/projects'
-      preLoaderRoute: typeof AuthenticationProjectsImport
-      parentRoute: typeof AuthenticationImport
     }
     '/auth/confirm-code': {
       id: '/auth/confirm-code'
@@ -101,17 +222,173 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthRegisterImport
       parentRoute: typeof AuthImport
     }
+    '/_authentication/profile/': {
+      id: '/_authentication/profile/'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof AuthenticationProfileIndexImport
+      parentRoute: typeof AuthenticationImport
+    }
+    '/_authentication/projects/': {
+      id: '/_authentication/projects/'
+      path: '/projects'
+      fullPath: '/projects'
+      preLoaderRoute: typeof AuthenticationProjectsIndexImport
+      parentRoute: typeof AuthenticationImport
+    }
+    '/_authentication/teams/': {
+      id: '/_authentication/teams/'
+      path: '/teams'
+      fullPath: '/teams'
+      preLoaderRoute: typeof AuthenticationTeamsIndexImport
+      parentRoute: typeof AuthenticationImport
+    }
+    '/_authentication/teams/$id/': {
+      id: '/_authentication/teams/$id/'
+      path: '/teams/$id'
+      fullPath: '/teams/$id'
+      preLoaderRoute: typeof AuthenticationTeamsIdIndexImport
+      parentRoute: typeof AuthenticationImport
+    }
+    '/_authentication/projects/$id/boards/$boardId': {
+      id: '/_authentication/projects/$id/boards/$boardId'
+      path: '/projects/$id/boards/$boardId'
+      fullPath: '/projects/$id/boards/$boardId'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+      parentRoute: typeof AuthenticationImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/all-task': {
+      id: '/_authentication/projects/$id/boards/$boardId/all-task'
+      path: '/all-task'
+      fullPath: '/projects/$id/boards/$boardId/all-task'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdAllTaskImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/board': {
+      id: '/_authentication/projects/$id/boards/$boardId/board'
+      path: '/board'
+      fullPath: '/projects/$id/boards/$boardId/board'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdBoardImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/calendar': {
+      id: '/_authentication/projects/$id/boards/$boardId/calendar'
+      path: '/calendar'
+      fullPath: '/projects/$id/boards/$boardId/calendar'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdCalendarImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/code': {
+      id: '/_authentication/projects/$id/boards/$boardId/code'
+      path: '/code'
+      fullPath: '/projects/$id/boards/$boardId/code'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdCodeImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/git': {
+      id: '/_authentication/projects/$id/boards/$boardId/git'
+      path: '/git'
+      fullPath: '/projects/$id/boards/$boardId/git'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdGitImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/list-task': {
+      id: '/_authentication/projects/$id/boards/$boardId/list-task'
+      path: '/list-task'
+      fullPath: '/projects/$id/boards/$boardId/list-task'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdListTaskImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/report': {
+      id: '/_authentication/projects/$id/boards/$boardId/report'
+      path: '/report'
+      fullPath: '/projects/$id/boards/$boardId/report'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdReportImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/settings': {
+      id: '/_authentication/projects/$id/boards/$boardId/settings'
+      path: '/settings'
+      fullPath: '/projects/$id/boards/$boardId/settings'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdSettingsImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/telegram': {
+      id: '/_authentication/projects/$id/boards/$boardId/telegram'
+      path: '/telegram'
+      fullPath: '/projects/$id/boards/$boardId/telegram'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdTelegramImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
+    '/_authentication/projects/$id/boards/$boardId/': {
+      id: '/_authentication/projects/$id/boards/$boardId/'
+      path: '/'
+      fullPath: '/projects/$id/boards/$boardId/'
+      preLoaderRoute: typeof AuthenticationProjectsIdBoardsBoardIdIndexImport
+      parentRoute: typeof AuthenticationProjectsIdBoardsBoardIdImport
+    }
   }
 }
 
 // Create and export the route tree
 
+interface AuthenticationProjectsIdBoardsBoardIdRouteChildren {
+  AuthenticationProjectsIdBoardsBoardIdAllTaskRoute: typeof AuthenticationProjectsIdBoardsBoardIdAllTaskRoute
+  AuthenticationProjectsIdBoardsBoardIdBoardRoute: typeof AuthenticationProjectsIdBoardsBoardIdBoardRoute
+  AuthenticationProjectsIdBoardsBoardIdCalendarRoute: typeof AuthenticationProjectsIdBoardsBoardIdCalendarRoute
+  AuthenticationProjectsIdBoardsBoardIdCodeRoute: typeof AuthenticationProjectsIdBoardsBoardIdCodeRoute
+  AuthenticationProjectsIdBoardsBoardIdGitRoute: typeof AuthenticationProjectsIdBoardsBoardIdGitRoute
+  AuthenticationProjectsIdBoardsBoardIdListTaskRoute: typeof AuthenticationProjectsIdBoardsBoardIdListTaskRoute
+  AuthenticationProjectsIdBoardsBoardIdReportRoute: typeof AuthenticationProjectsIdBoardsBoardIdReportRoute
+  AuthenticationProjectsIdBoardsBoardIdSettingsRoute: typeof AuthenticationProjectsIdBoardsBoardIdSettingsRoute
+  AuthenticationProjectsIdBoardsBoardIdTelegramRoute: typeof AuthenticationProjectsIdBoardsBoardIdTelegramRoute
+  AuthenticationProjectsIdBoardsBoardIdIndexRoute: typeof AuthenticationProjectsIdBoardsBoardIdIndexRoute
+}
+
+const AuthenticationProjectsIdBoardsBoardIdRouteChildren: AuthenticationProjectsIdBoardsBoardIdRouteChildren =
+  {
+    AuthenticationProjectsIdBoardsBoardIdAllTaskRoute:
+      AuthenticationProjectsIdBoardsBoardIdAllTaskRoute,
+    AuthenticationProjectsIdBoardsBoardIdBoardRoute:
+      AuthenticationProjectsIdBoardsBoardIdBoardRoute,
+    AuthenticationProjectsIdBoardsBoardIdCalendarRoute:
+      AuthenticationProjectsIdBoardsBoardIdCalendarRoute,
+    AuthenticationProjectsIdBoardsBoardIdCodeRoute:
+      AuthenticationProjectsIdBoardsBoardIdCodeRoute,
+    AuthenticationProjectsIdBoardsBoardIdGitRoute:
+      AuthenticationProjectsIdBoardsBoardIdGitRoute,
+    AuthenticationProjectsIdBoardsBoardIdListTaskRoute:
+      AuthenticationProjectsIdBoardsBoardIdListTaskRoute,
+    AuthenticationProjectsIdBoardsBoardIdReportRoute:
+      AuthenticationProjectsIdBoardsBoardIdReportRoute,
+    AuthenticationProjectsIdBoardsBoardIdSettingsRoute:
+      AuthenticationProjectsIdBoardsBoardIdSettingsRoute,
+    AuthenticationProjectsIdBoardsBoardIdTelegramRoute:
+      AuthenticationProjectsIdBoardsBoardIdTelegramRoute,
+    AuthenticationProjectsIdBoardsBoardIdIndexRoute:
+      AuthenticationProjectsIdBoardsBoardIdIndexRoute,
+  }
+
+const AuthenticationProjectsIdBoardsBoardIdRouteWithChildren =
+  AuthenticationProjectsIdBoardsBoardIdRoute._addFileChildren(
+    AuthenticationProjectsIdBoardsBoardIdRouteChildren,
+  )
+
 interface AuthenticationRouteChildren {
-  AuthenticationProjectsRoute: typeof AuthenticationProjectsRoute
+  AuthenticationProfileIndexRoute: typeof AuthenticationProfileIndexRoute
+  AuthenticationProjectsIndexRoute: typeof AuthenticationProjectsIndexRoute
+  AuthenticationTeamsIndexRoute: typeof AuthenticationTeamsIndexRoute
+  AuthenticationTeamsIdIndexRoute: typeof AuthenticationTeamsIdIndexRoute
+  AuthenticationProjectsIdBoardsBoardIdRoute: typeof AuthenticationProjectsIdBoardsBoardIdRouteWithChildren
 }
 
 const AuthenticationRouteChildren: AuthenticationRouteChildren = {
-  AuthenticationProjectsRoute: AuthenticationProjectsRoute,
+  AuthenticationProfileIndexRoute: AuthenticationProfileIndexRoute,
+  AuthenticationProjectsIndexRoute: AuthenticationProjectsIndexRoute,
+  AuthenticationTeamsIndexRoute: AuthenticationTeamsIndexRoute,
+  AuthenticationTeamsIdIndexRoute: AuthenticationTeamsIdIndexRoute,
+  AuthenticationProjectsIdBoardsBoardIdRoute:
+    AuthenticationProjectsIdBoardsBoardIdRouteWithChildren,
 }
 
 const AuthenticationRouteWithChildren = AuthenticationRoute._addFileChildren(
@@ -133,67 +410,157 @@ const AuthRouteChildren: AuthRouteChildren = {
 const AuthRouteWithChildren = AuthRoute._addFileChildren(AuthRouteChildren)
 
 export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
   '': typeof AuthenticationRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
-  '/projects': typeof AuthenticationProjectsRoute
   '/auth/confirm-code': typeof AuthConfirmCodeRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
+  '/profile': typeof AuthenticationProfileIndexRoute
+  '/projects': typeof AuthenticationProjectsIndexRoute
+  '/teams': typeof AuthenticationTeamsIndexRoute
+  '/teams/$id': typeof AuthenticationTeamsIdIndexRoute
+  '/projects/$id/boards/$boardId': typeof AuthenticationProjectsIdBoardsBoardIdRouteWithChildren
+  '/projects/$id/boards/$boardId/all-task': typeof AuthenticationProjectsIdBoardsBoardIdAllTaskRoute
+  '/projects/$id/boards/$boardId/board': typeof AuthenticationProjectsIdBoardsBoardIdBoardRoute
+  '/projects/$id/boards/$boardId/calendar': typeof AuthenticationProjectsIdBoardsBoardIdCalendarRoute
+  '/projects/$id/boards/$boardId/code': typeof AuthenticationProjectsIdBoardsBoardIdCodeRoute
+  '/projects/$id/boards/$boardId/git': typeof AuthenticationProjectsIdBoardsBoardIdGitRoute
+  '/projects/$id/boards/$boardId/list-task': typeof AuthenticationProjectsIdBoardsBoardIdListTaskRoute
+  '/projects/$id/boards/$boardId/report': typeof AuthenticationProjectsIdBoardsBoardIdReportRoute
+  '/projects/$id/boards/$boardId/settings': typeof AuthenticationProjectsIdBoardsBoardIdSettingsRoute
+  '/projects/$id/boards/$boardId/telegram': typeof AuthenticationProjectsIdBoardsBoardIdTelegramRoute
+  '/projects/$id/boards/$boardId/': typeof AuthenticationProjectsIdBoardsBoardIdIndexRoute
 }
 
 export interface FileRoutesByTo {
+  '/': typeof IndexRoute
   '': typeof AuthenticationRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
-  '/projects': typeof AuthenticationProjectsRoute
   '/auth/confirm-code': typeof AuthConfirmCodeRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
+  '/profile': typeof AuthenticationProfileIndexRoute
+  '/projects': typeof AuthenticationProjectsIndexRoute
+  '/teams': typeof AuthenticationTeamsIndexRoute
+  '/teams/$id': typeof AuthenticationTeamsIdIndexRoute
+  '/projects/$id/boards/$boardId/all-task': typeof AuthenticationProjectsIdBoardsBoardIdAllTaskRoute
+  '/projects/$id/boards/$boardId/board': typeof AuthenticationProjectsIdBoardsBoardIdBoardRoute
+  '/projects/$id/boards/$boardId/calendar': typeof AuthenticationProjectsIdBoardsBoardIdCalendarRoute
+  '/projects/$id/boards/$boardId/code': typeof AuthenticationProjectsIdBoardsBoardIdCodeRoute
+  '/projects/$id/boards/$boardId/git': typeof AuthenticationProjectsIdBoardsBoardIdGitRoute
+  '/projects/$id/boards/$boardId/list-task': typeof AuthenticationProjectsIdBoardsBoardIdListTaskRoute
+  '/projects/$id/boards/$boardId/report': typeof AuthenticationProjectsIdBoardsBoardIdReportRoute
+  '/projects/$id/boards/$boardId/settings': typeof AuthenticationProjectsIdBoardsBoardIdSettingsRoute
+  '/projects/$id/boards/$boardId/telegram': typeof AuthenticationProjectsIdBoardsBoardIdTelegramRoute
+  '/projects/$id/boards/$boardId': typeof AuthenticationProjectsIdBoardsBoardIdIndexRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
+  '/': typeof IndexRoute
   '/_authentication': typeof AuthenticationRouteWithChildren
   '/auth': typeof AuthRouteWithChildren
-  '/_authentication/projects': typeof AuthenticationProjectsRoute
   '/auth/confirm-code': typeof AuthConfirmCodeRoute
   '/auth/login': typeof AuthLoginRoute
   '/auth/register': typeof AuthRegisterRoute
+  '/_authentication/profile/': typeof AuthenticationProfileIndexRoute
+  '/_authentication/projects/': typeof AuthenticationProjectsIndexRoute
+  '/_authentication/teams/': typeof AuthenticationTeamsIndexRoute
+  '/_authentication/teams/$id/': typeof AuthenticationTeamsIdIndexRoute
+  '/_authentication/projects/$id/boards/$boardId': typeof AuthenticationProjectsIdBoardsBoardIdRouteWithChildren
+  '/_authentication/projects/$id/boards/$boardId/all-task': typeof AuthenticationProjectsIdBoardsBoardIdAllTaskRoute
+  '/_authentication/projects/$id/boards/$boardId/board': typeof AuthenticationProjectsIdBoardsBoardIdBoardRoute
+  '/_authentication/projects/$id/boards/$boardId/calendar': typeof AuthenticationProjectsIdBoardsBoardIdCalendarRoute
+  '/_authentication/projects/$id/boards/$boardId/code': typeof AuthenticationProjectsIdBoardsBoardIdCodeRoute
+  '/_authentication/projects/$id/boards/$boardId/git': typeof AuthenticationProjectsIdBoardsBoardIdGitRoute
+  '/_authentication/projects/$id/boards/$boardId/list-task': typeof AuthenticationProjectsIdBoardsBoardIdListTaskRoute
+  '/_authentication/projects/$id/boards/$boardId/report': typeof AuthenticationProjectsIdBoardsBoardIdReportRoute
+  '/_authentication/projects/$id/boards/$boardId/settings': typeof AuthenticationProjectsIdBoardsBoardIdSettingsRoute
+  '/_authentication/projects/$id/boards/$boardId/telegram': typeof AuthenticationProjectsIdBoardsBoardIdTelegramRoute
+  '/_authentication/projects/$id/boards/$boardId/': typeof AuthenticationProjectsIdBoardsBoardIdIndexRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
+    | '/'
     | ''
     | '/auth'
-    | '/projects'
     | '/auth/confirm-code'
     | '/auth/login'
     | '/auth/register'
+    | '/profile'
+    | '/projects'
+    | '/teams'
+    | '/teams/$id'
+    | '/projects/$id/boards/$boardId'
+    | '/projects/$id/boards/$boardId/all-task'
+    | '/projects/$id/boards/$boardId/board'
+    | '/projects/$id/boards/$boardId/calendar'
+    | '/projects/$id/boards/$boardId/code'
+    | '/projects/$id/boards/$boardId/git'
+    | '/projects/$id/boards/$boardId/list-task'
+    | '/projects/$id/boards/$boardId/report'
+    | '/projects/$id/boards/$boardId/settings'
+    | '/projects/$id/boards/$boardId/telegram'
+    | '/projects/$id/boards/$boardId/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/'
     | ''
     | '/auth'
-    | '/projects'
     | '/auth/confirm-code'
     | '/auth/login'
     | '/auth/register'
+    | '/profile'
+    | '/projects'
+    | '/teams'
+    | '/teams/$id'
+    | '/projects/$id/boards/$boardId/all-task'
+    | '/projects/$id/boards/$boardId/board'
+    | '/projects/$id/boards/$boardId/calendar'
+    | '/projects/$id/boards/$boardId/code'
+    | '/projects/$id/boards/$boardId/git'
+    | '/projects/$id/boards/$boardId/list-task'
+    | '/projects/$id/boards/$boardId/report'
+    | '/projects/$id/boards/$boardId/settings'
+    | '/projects/$id/boards/$boardId/telegram'
+    | '/projects/$id/boards/$boardId'
   id:
     | '__root__'
+    | '/'
     | '/_authentication'
     | '/auth'
-    | '/_authentication/projects'
     | '/auth/confirm-code'
     | '/auth/login'
     | '/auth/register'
+    | '/_authentication/profile/'
+    | '/_authentication/projects/'
+    | '/_authentication/teams/'
+    | '/_authentication/teams/$id/'
+    | '/_authentication/projects/$id/boards/$boardId'
+    | '/_authentication/projects/$id/boards/$boardId/all-task'
+    | '/_authentication/projects/$id/boards/$boardId/board'
+    | '/_authentication/projects/$id/boards/$boardId/calendar'
+    | '/_authentication/projects/$id/boards/$boardId/code'
+    | '/_authentication/projects/$id/boards/$boardId/git'
+    | '/_authentication/projects/$id/boards/$boardId/list-task'
+    | '/_authentication/projects/$id/boards/$boardId/report'
+    | '/_authentication/projects/$id/boards/$boardId/settings'
+    | '/_authentication/projects/$id/boards/$boardId/telegram'
+    | '/_authentication/projects/$id/boards/$boardId/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   AuthenticationRoute: typeof AuthenticationRouteWithChildren
   AuthRoute: typeof AuthRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   AuthenticationRoute: AuthenticationRouteWithChildren,
   AuthRoute: AuthRouteWithChildren,
 }
@@ -208,14 +575,22 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
+        "/",
         "/_authentication",
         "/auth"
       ]
     },
+    "/": {
+      "filePath": "index.tsx"
+    },
     "/_authentication": {
       "filePath": "_authentication.tsx",
       "children": [
-        "/_authentication/projects"
+        "/_authentication/profile/",
+        "/_authentication/projects/",
+        "/_authentication/teams/",
+        "/_authentication/teams/$id/",
+        "/_authentication/projects/$id/boards/$boardId"
       ]
     },
     "/auth": {
@@ -225,10 +600,6 @@ export const routeTree = rootRoute
         "/auth/login",
         "/auth/register"
       ]
-    },
-    "/_authentication/projects": {
-      "filePath": "_authentication/projects.tsx",
-      "parent": "/_authentication"
     },
     "/auth/confirm-code": {
       "filePath": "auth/confirm-code.tsx",
@@ -241,6 +612,78 @@ export const routeTree = rootRoute
     "/auth/register": {
       "filePath": "auth/register.tsx",
       "parent": "/auth"
+    },
+    "/_authentication/profile/": {
+      "filePath": "_authentication/profile/index.tsx",
+      "parent": "/_authentication"
+    },
+    "/_authentication/projects/": {
+      "filePath": "_authentication/projects/index.tsx",
+      "parent": "/_authentication"
+    },
+    "/_authentication/teams/": {
+      "filePath": "_authentication/teams/index.tsx",
+      "parent": "/_authentication"
+    },
+    "/_authentication/teams/$id/": {
+      "filePath": "_authentication/teams/$id/index.tsx",
+      "parent": "/_authentication"
+    },
+    "/_authentication/projects/$id/boards/$boardId": {
+      "filePath": "_authentication/projects/$id/boards/$boardId.tsx",
+      "parent": "/_authentication",
+      "children": [
+        "/_authentication/projects/$id/boards/$boardId/all-task",
+        "/_authentication/projects/$id/boards/$boardId/board",
+        "/_authentication/projects/$id/boards/$boardId/calendar",
+        "/_authentication/projects/$id/boards/$boardId/code",
+        "/_authentication/projects/$id/boards/$boardId/git",
+        "/_authentication/projects/$id/boards/$boardId/list-task",
+        "/_authentication/projects/$id/boards/$boardId/report",
+        "/_authentication/projects/$id/boards/$boardId/settings",
+        "/_authentication/projects/$id/boards/$boardId/telegram",
+        "/_authentication/projects/$id/boards/$boardId/"
+      ]
+    },
+    "/_authentication/projects/$id/boards/$boardId/all-task": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/all-task.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/board": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/board.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/calendar": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/calendar.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/code": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/code.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/git": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/git.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/list-task": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/list-task.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/report": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/report.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/settings": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/settings.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/telegram": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/telegram.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
+    },
+    "/_authentication/projects/$id/boards/$boardId/": {
+      "filePath": "_authentication/projects/$id/boards/$boardId/index.tsx",
+      "parent": "/_authentication/projects/$id/boards/$boardId"
     }
   }
 }

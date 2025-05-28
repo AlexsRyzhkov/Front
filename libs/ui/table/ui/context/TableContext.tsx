@@ -11,17 +11,66 @@ interface ITableProvider extends PropsWithChildren, ITableStoreParams {
 }
 
 export const TableProvider = ({
+	data,
+
+	columns,
+
 	children,
-	data = [],
-	...storeParams
+	loading,
+
+	paginator,
+	rows,
+	first,
+	totalPages,
+	onChangePage,
+
+	hover,
+	onRowClick,
+	onCellClick,
 }: ITableProvider) => {
-	const store = useRef(createTableStore({ ...storeParams, data })).current;
-	const { setStore } = useStore(store, (state) => state);
+	const store = useRef(createTableStore({
+		data,
+		columns,
+
+		loading,
+
+		paginator,
+		rows,
+		first,
+		totalPages,
+		onChangePage,
+
+		hover,
+		onRowClick,
+		onCellClick,
+	})).current;
+	const { setPaginator, setColumns, setHover, setOnClick, setData } = useStore(store, (state) => state);
 
 	useEffect(() => {
-		setStore({ ...storeParams, data });
+		setData(data);
+	}, [JSON.stringify(data)]);
 
-	}, [JSON.stringify({ ...storeParams, data })]);
+	useEffect(() => {
+		setColumns(columns);
+	}, [JSON.stringify(columns)]);
+
+	useEffect(() => {
+		setPaginator({
+			paginator,
+			rows,
+			first,
+			totalPages,
+			onChangePage,
+		});
+	}, [paginator, rows, first, totalPages, onChangePage]);
+
+	useEffect(() => {
+		setHover(hover);
+	}, [hover]);
+
+	useEffect(() => {
+		setOnClick(onRowClick, onCellClick);
+	}, [onCellClick, onRowClick]);
 
 	return (
 		<TableContext.Provider value={store}>

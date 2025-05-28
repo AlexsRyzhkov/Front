@@ -1,7 +1,8 @@
+import { defineConfig } from 'vite';
 import TanStackRouterVite from "@tanstack/router-plugin/vite";
 import path from "node:path";
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import svgr from "vite-plugin-svgr";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -14,6 +15,7 @@ export default defineConfig({
 			quoteStyle: 'single',
 			routeFileIgnorePattern: 'gen',
 		}),
+		svgr(),
 		react(),
 	],
 	resolve: {
@@ -28,6 +30,7 @@ export default defineConfig({
 
 			// Список alias для библиотеки
 			"@ui-kit": path.resolve(__dirname, 'libs/ui'),
+			"@ui-hooks": path.resolve(__dirname, 'libs/hooks'),
 			"@lib-store": path.resolve(__dirname, 'libs/store'),
 			"@lib-enums": path.resolve(__dirname, 'libs/enums'),
 		},

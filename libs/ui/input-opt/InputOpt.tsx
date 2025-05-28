@@ -4,7 +4,6 @@ import clsx from "clsx";
 import "@ui-kit/input-opt/InputOpt.scss";
 
 interface IInputOptProps extends InputHTMLAttributes<HTMLInputElement> {
-	ref?: RefObject<HTMLInputElement | null>;
 	value?: string;
 	number: number;
 	error?: string;

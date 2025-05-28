@@ -1,11 +1,12 @@
-import { ToastPresetAnimation } from "@ui-kit/toast/ui/preset-animation/ToastPresetAnimation";
 import { v4 as uuidv4 } from 'uuid';
+import { AnimatePresence } from 'motion/react';
 import { FC, RefObject, useState, useImperativeHandle, useCallback } from "react";
+
+import { ZIndex } from "@lib-enums/enums";
+
 import { IToastsItem, IShowParams, IRefToast } from "@ui-kit/toast/ui/Toast.types";
 
-import { AnimatePresence, motion } from 'motion/react';
-import { ZIndex } from "../../../enums/enums";
-
+import { ToastPresetAnimation } from "@ui-kit/toast/ui/preset-animation/ToastPresetAnimation";
 import { ToastSuccess } from "./succes/ToastSuccess";
 import { ToastError } from "@ui-kit/toast/ui/error/ToastError";
 import { ToastInfo } from "@ui-kit/toast/ui/info/ToastInfo";

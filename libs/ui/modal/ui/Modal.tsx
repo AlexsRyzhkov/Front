@@ -1,4 +1,4 @@
-import { FC, ReactElement } from "react";
+import { FC, ReactElement, useState, useEffect } from "react";
 import { AnimatePresence } from "motion/react";
 import { createPortal } from "react-dom";
 
@@ -18,7 +18,10 @@ interface IModalComponents {
 }
 
 interface IModalProps {
-	visible?: boolean;
+	visible: boolean;
+
+	onBackgroundClick?: () => void;
+
 	className?: string;
 	children?: ReactElement | ReactElement[];
 	pt?: {
@@ -28,6 +31,7 @@ interface IModalProps {
 
 export const Modal: FC<IModalProps> & IModalComponents = ({
 	visible,
+	onBackgroundClick,
 	className,
 	children,
 	pt,

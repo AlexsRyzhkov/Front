@@ -1,0 +1,21 @@
+.project-code-empty {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    &__title {
+        font-size: 32px;
+        color: var(--color-primary-dark);
+    }
+
+    &__btn {
+        display: flex;
+
+        gap: 20px;
+    }
+}

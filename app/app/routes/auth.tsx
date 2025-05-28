@@ -10,6 +10,12 @@ export const Route = createFileRoute('/auth')({
 				to: "/auth/login",
 			});
 		}
+
+		if (localStorage.getItem('access_token')) {
+			return redirect({
+				to: "/projects",
+			});
+		}
 	},
 });
 

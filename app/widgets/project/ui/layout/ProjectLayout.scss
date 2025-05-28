@@ -1,0 +1,13 @@
+.project-layout {
+    display: flex;
+    height: calc(100vh - 60px);
+
+    &__nav {
+        min-width: 350px;
+        border-right: 1px solid #DCDFE4;
+    }
+
+    &__content {
+        width: 100%;
+    }
+}

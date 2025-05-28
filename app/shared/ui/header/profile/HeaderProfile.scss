@@ -1,0 +1,87 @@
+.header-profile {
+
+    &__btn {
+        background: #DE360C;
+        height: 32px;
+        width: 32px;
+
+        border-radius: 4px;
+        font-size: 14px;
+
+        padding: 2px;
+        color: #fff;
+
+        display: flex;
+
+        &:hover {
+            background: #DE360C;
+        }
+    }
+
+    &__dropdown {
+        display: flex;
+        flex-direction: column;
+
+        width: 350px;
+
+        gap: 4px;
+
+        padding: 6px 0;
+    }
+
+    &__dropdown-profile {
+        background: #f8f8f8;
+        margin: 0 6px;
+
+        padding: 16px;
+
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__dropdown-profile-icon {
+        width: 64px;
+        height: 64px;
+
+        background: #DE360C;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 30px;
+        font-weight: 500;
+
+        border-radius: 50%;
+    }
+
+    &__dropdown-profile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    &__dropdown-fio {
+        font-size: 20px;
+        font-weight: bold;
+        color: #434447;
+    }
+
+    &__dropdown-email {
+        font-size: 14px;
+    }
+
+    &__dropdown-btn {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+
+        padding: 8px 16px;
+
+        gap: 15px;
+
+        font-weight: 400;
+    }
+}

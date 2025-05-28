@@ -22,14 +22,6 @@
         }
 
         cursor: pointer;
-
-        &:hover {
-            background-color: var(--color-light-gray-hover);
-        }
-
-        &:active {
-            background-color: var(--color-light-gray-active);
-        }
     }
 
     &__cell-content-sort-icon {

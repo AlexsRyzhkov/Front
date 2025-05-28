@@ -1,0 +1,265 @@
+.task_form {
+    display: flex;
+    flex-direction: column;
+
+
+    gap: 20px;
+    padding: 20px 0;
+
+    &__container {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__btn {
+        display: flex;
+        gap: 10px;
+        justify-content: end;
+    }
+
+    &__info {
+        width: 600px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 10px 2px;
+
+        max-height: 700px;
+        overflow-y: auto;
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    &__desc-area {
+        border-radius: 6px;
+        border: 1px solid #6B6B6B;
+        resize: none;
+
+        padding: 10px;
+        width: 100%;
+        font-size: 14px;
+
+        &:focus {
+            outline: 1px solid var(--color-primary);
+        }
+    }
+
+
+    &__info-dop {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+
+    }
+
+    &__info-dop-title {
+        font-size: 16px;
+        font-weight: 600;
+
+        color: #44546F;
+    }
+
+    &__info-dop-btn {
+        display: flex;
+
+        width: min-content;
+
+        gap: 10px;
+
+        padding: 4px;
+
+        border-radius: 4px;
+        border: 1px solid #9A9DA4;
+
+        & > span {
+            padding: 4px 15px;
+            border-radius: 2px;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+    }
+
+    &__info-dop-btn--active {
+        border: 1px solid rgba(53, 108, 190, 0.60) !important;
+
+        background: #E9F2FE;
+    }
+
+    &__detail {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    &__detail-title {
+        display: flex;
+
+        align-items: center;
+        gap: 20px;
+    }
+
+    &__select {
+        position: relative;
+    }
+
+    &__select-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 10px;
+
+        padding: 15px;
+
+        background: #F0F1F2;
+
+        font-size: 14px;
+
+        color: #2E394C;
+
+        width: fit-content;
+
+        font-weight: 600;
+
+        border-radius: 4px;
+
+        cursor: pointer;
+    }
+
+    &__select-icon {
+        transform: rotate(-90deg) translateX(4px);
+    }
+
+    &__select-option {
+        position: absolute;
+        top: 110%;
+        left: 0;
+
+        width: 200px;
+        overflow-y: auto;
+
+        max-height: 200px;
+
+        background: #F0F1F2;
+
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            padding: 10px;
+
+            cursor: pointer;
+
+            &:hover {
+                background: white;
+            }
+        }
+    }
+
+
+    &__is-complete {
+        color: rgba(68, 84, 111, 0.60);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        padding: 10px 15px;
+        border-radius: 4px;
+
+        &--close {
+            background: #C3E6CD;
+            color: rgba(68, 84, 111, 1);
+        }
+    }
+
+    &__detail-list {
+        border-radius: 4px;
+        border: 1px solid rgba(68, 84, 111, 0.20);
+    }
+
+    &__info-dop-title-t {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        color: #2E394C;
+
+        padding: 20px;
+
+        background: #F0F1F2;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border-radius: 6px;
+
+
+        cursor: pointer;
+    }
+
+    &__select-icon-t {
+        transform: rotate(-90deg) translateX(4px);
+    }
+
+    &__info-drop-content {
+        padding: 25px;
+    }
+
+    &__info-drop-cont {
+
+    }
+}
+
+.detail-list-item {
+    display: flex;
+
+    &__labels {
+        display: flex;
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    &__p {
+        min-width: 100px;
+        height: fit-content;
+    }
+
+    &__name {
+        color: #44546F;
+
+        font-weight: 600;
+        font-size: 14px;
+        font-style: normal;
+
+        align-items: center;
+
+        display: flex;
+
+        gap: 20px
+    }
+
+    &__content {
+        padding: 4px;
+        user-select: none;
+
+
+        &:hover {
+            background: #E9F2FE;
+
+            cursor: pointer;
+        }
+    }
+}

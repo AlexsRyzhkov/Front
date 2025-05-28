@@ -1,26 +1,27 @@
-import { useTableContext } from "@ui-kit/table/ui/context/TableContext";
 import { FC } from "react";
 
-import '@ui-kit/table/ui/header/TableHeader.scss';
+import { useTableContext } from "@ui-kit/table/ui/context/TableContext";
 import { Icon } from "@ui-kit/icon/icon";
+
+import '@ui-kit/table/ui/header/TableHeader.scss';
 
 export const TableHeader: FC = () => {
 	const { headers } = useTableContext();
 
-	console.log(headers);
-
 	return (
 		<thead className={'table-header'}>
 		<tr className={'table-header__row'}>
-			{headers.map((header) => (
-				<th className={'table-header__cell'} key={header.id}>
-					<div className={'table-header__cell-content'}>
+			{headers.map((header, index) => (
+				<th className={'table-header__cell'} key={index}>
+					<div className={'table-header__cell-content'} style={{ justifyContent: header.align }}>
 						{header.name}
-						<Icon
-							icon={'arrow_right_alt'}
-							className={'table-header__cell-content-sort-icon'}
-							size={'20px'}
-						/>
+						{header.sortable && (
+							<Icon
+								icon={'arrow_right_alt'}
+								className={'table-header__cell-content-sort-icon'}
+								size={'20px'}
+							/>
+						)}
 					</div>
 				</th>
 			))}

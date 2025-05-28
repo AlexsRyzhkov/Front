@@ -1,8 +1,11 @@
-import { createContext, FC, PropsWithChildren, useRef, useContext } from "react";
 import { useStore } from "zustand";
+import { createContext, FC, PropsWithChildren, useRef, useContext } from "react";
 
 import { createFoxKitStore, TFoxKitStoreReturn } from "@lib-store/fox-kit/FoxKitContextStore";
 
+import {
+	FoxKitContextDropdownContainer,
+} from "@ui-kit/context/fox-kit/dropdown-container/FoxKitContexDropdownContainer";
 import { FoxKitContextModalContainer } from "@ui-kit/context/fox-kit/modal-container/FoxKitContextModalContainer";
 
 import '@ui-kit/context/fox-kit/FoxKitContext.scss';
@@ -15,6 +18,7 @@ export const FoxKitProvider: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<FoxKitContext.Provider value={store}>
 			{children}
+			<FoxKitContextDropdownContainer/>
 			<FoxKitContextModalContainer/>
 		</FoxKitContext.Provider>
 	);

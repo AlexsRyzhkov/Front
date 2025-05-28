@@ -1,0 +1,23 @@
+.project-all-task-page {
+    display: flex;
+    flex-direction: column;
+
+    padding: 20px 40px;
+
+    height: 100%;
+
+    gap: 15px;
+
+    &__content {
+        max-height: calc(100% - 120px);
+    }
+
+
+    &__list {
+        max-width: 400px;
+
+        height: 100%;
+
+        background: #F5F5F5;
+    }
+}

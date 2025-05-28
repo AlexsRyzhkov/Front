@@ -1,11 +1,22 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router';
+import { Header } from "@shared/ui/header/Header";
+import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/_authentication')({
 	component: RouteComponent,
+	beforeLoad: () => {
+		if (!localStorage.getItem('access_token')) {
+			return redirect({
+				to: '/auth/login',
+			});
+		}
+	},
 });
 
 function RouteComponent() {
 	return (
-		<Outlet/>
+		<main className={'main'}>
+			<Header/>
+			<Outlet/>
+		</main>
 	);
 }

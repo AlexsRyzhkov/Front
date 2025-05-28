@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    padding: 0 20px;
+    height: 60px;
+
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #DCDFE4;
+
+    box-sizing: border-box;
+
+    &__apps-logo {
+        display: flex;
+
+        gap: 10px;
+
+        margin-right: 160px;
+    }
+
+    &__navigation {
+        height: 100%;
+    }
+
+    &__profile-other {
+        display: flex;
+        gap: 10px;
+
+        align-items: center;
+
+        margin-left: auto;
+    }
+}

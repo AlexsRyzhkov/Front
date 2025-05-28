@@ -1,0 +1,25 @@
+.user-view {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    &__ag {
+        width: 24px;
+        height: 24px;
+
+        background: #DE350B;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        color: white;
+
+        font-size: 10px;
+
+        border-radius: 4px;
+
+
+    }
+}

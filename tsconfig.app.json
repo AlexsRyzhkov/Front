@@ -23,9 +23,9 @@
 			"@entities/*": ["app/entities/*"],
 			"@pages/*": ["app/pages/*"],
 			"@shared/*": ["app/shared/*"],
-
-            /// Для библиотеки
+			/// Для библиотеки
 			"@ui-kit/*": ["libs/ui/*"],
+			"@ui-hooks/*": ["libs/hooks/*"],
 			"@lib-store/*": ["libs/store/*"],
 			"@lib-enums/*": ["libs/enums/*"]
 		}

@@ -1,0 +1,29 @@
+.breadcrumbs {
+    display: flex;
+    gap: 6px;
+
+    align-items: center;
+    justify-content: start;
+
+    color: var(--color-gray);
+    font-size: 16px;
+
+    &__link {
+        color: var(--color-gray);
+        font-size: 14px;
+
+        &--last {
+            color: #394f70;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+            cursor: auto;
+        }
+    }
+
+    &__divider {
+        color: var(--color-gray);
+    }
+}

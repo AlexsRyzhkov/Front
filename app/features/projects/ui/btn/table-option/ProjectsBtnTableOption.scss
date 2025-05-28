@@ -1,0 +1,42 @@
+.project-btn-table-option {
+
+    min-width: 200px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+
+    &__delete {
+        color: #fc5050;
+
+
+        width: 100%;
+
+        justify-content: start;
+        padding: 10px 20px;
+
+    }
+
+    &__update {
+        width: 100%;
+
+        justify-content: start;
+        padding: 10px 20px;
+
+        color: var(--color-primary-darkne);
+    }
+}
+
+.project-btn-table-option-modal-update {
+    &__form {
+        min-width: 500px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        margin: 20px 0;
+    }
+}

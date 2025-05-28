@@ -1,0 +1,53 @@
+.projects-btn-create {
+
+    &__btn {
+        padding: 8px 16px;
+    }
+}
+
+.projects-btn-create-modal {
+
+    &__header {
+
+    }
+
+    &__title {
+        font-size: 24px;
+
+        color: #2c3e50;
+    }
+
+    &__body {
+
+        min-width: 500px;
+
+    }
+
+    &__footer {
+        display: flex;
+        gap: 8px;
+
+        justify-content: flex-end;
+
+        margin-top: 20px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    &__cancel {
+        background: #94A4BD;
+
+        &:hover {
+            background: #8391a8;
+        }
+
+        &:active {
+            background: #768498;
+        }
+    }
+}

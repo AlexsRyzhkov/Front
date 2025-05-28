@@ -1,0 +1,50 @@
+.member-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-height: 300px;
+    overflow-y: auto;
+
+    &__item {
+        display: flex;
+
+        padding: 10px;
+
+        gap: 10px;
+
+        align-items: center;
+        cursor: pointer;
+
+        border-radius: 5px;
+        width: 100%;
+
+        &:hover {
+            background: rgba(90, 107, 139, 0.2);
+        }
+    }
+
+    &__avatar {
+        width: 34px;
+        height: 34px;
+
+        background: #DE350B;
+
+        font-size: 16px;
+
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 5px;
+    }
+
+    &__fio {
+        font-size: 18px;
+        color: #5A6B8B;
+        font-weight: bold;
+    }
+}

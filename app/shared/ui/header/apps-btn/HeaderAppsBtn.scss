@@ -1,0 +1,10 @@
+.header-apps-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__btn {
+        padding: 5px;
+        border-radius: 2px;
+    }
+}

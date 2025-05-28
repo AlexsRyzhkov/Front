@@ -3,16 +3,19 @@
     gap: 20px;
 
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     &__title {
         font-size: 24px;
-        font-weight: 500;
+        font-weight: 600;
+        color: #5A6B8B;
+
+
         width: 100%;
     }
 
     &__close-btn {
-        padding: 5px;
+        padding: 4px;
         width: fit-content;
 
         user-select: none;

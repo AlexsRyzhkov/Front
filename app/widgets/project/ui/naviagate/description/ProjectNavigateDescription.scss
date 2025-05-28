@@ -1,0 +1,22 @@
+.project-navigate-description {
+    display: flex;
+    gap: 10px;
+
+    color: #44546F;
+    padding: 20px 20px;
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    &__type {
+        font-size: 12px;
+        font-weight: 500;
+    }
+}

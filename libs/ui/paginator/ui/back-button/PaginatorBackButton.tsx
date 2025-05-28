@@ -4,9 +4,13 @@ import { FC } from "react";
 
 import '@ui-kit/paginator/ui/back-button/PaginatorBackButton.scss';
 
-export const PaginatorBackButton: FC = () => {
+interface IPaginatorBackButtonProps {
+	onClick?: () => void;
+}
+
+export const PaginatorBackButton: FC<IPaginatorBackButtonProps> = ({ onClick }) => {
 	return (
-		<Button className={'paginator-back-btn'} variant={'no_background'}>
+		<Button className={'paginator-back-btn'} variant={'no_background'} onClick={onClick}>
 			<Icon icon={'arrow_back_ios'}/>
 		</Button>
 	);

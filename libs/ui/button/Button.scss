@@ -12,7 +12,20 @@
     cursor: pointer;
 
     border-radius: 4px;
-    
+    gap: 10px;
+
+
+    position: relative;
+
+    &:disabled {
+        background: #939393;
+        color: white;
+
+        &:hover {
+            background: #939393;
+        }
+    }
+
     &--primary {
         background: var(--color-primary);
         color: white;
@@ -49,23 +62,66 @@
         }
 
         &:active {
-            background: #d3d3d3;
+            background: #e6e6e6;
+        }
+    }
+
+    &--white {
+        background: #F1F2F4;
+        filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.10)) drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.09)) drop-shadow(2px 5px 3px rgba(0, 0, 0, 0.05)) drop-shadow(3px 8px 4px rgba(0, 0, 0, 0.01)) drop-shadow(5px 13px 4px rgba(0, 0, 0, 0.00));
+
+        &:hover {
+            background: #ececec;
+        }
+
+        &:active {
+            background: #e1e1e1;
+        }
+    }
+
+    &--cancel {
+        background: #94A4BD;
+        color: white;
+
+        &:hover {
+            background: #90a0b8;
+        }
+
+        &:active {
+            background: #8897ae;
+        }
+    }
+
+    &--delete {
+        background: #fc5050;
+        color: white;
+
+        &:hover {
+            background: #ef4d4d;
+        }
+
+        &:active {
+            background: #e64b4b;
         }
     }
 
     &--font-little {
         font-size: 12px;
+        padding: 4px;
     }
 
     &--font-small {
         font-size: 14px;
+        padding: 6px;
     }
 
     &--font-medium {
         font-size: 16px;
+        padding: 8px;
     }
 
     &--font-large {
         font-size: 20px;
+        padding: 10px;
     }
 }

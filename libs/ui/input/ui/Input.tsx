@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { FC, InputHTMLAttributes } from "react";
+import clsx from "clsx";
 
 import '@ui-kit/input/ui/Input.scss';
 
@@ -9,20 +9,36 @@ export type TInputProps = InputHTMLAttributes<HTMLInputElement> & {
 	pt?: {
 		container?: string
 		errContainer?: string
-		input?: string
+
+		inputContainer?: string
 	}
+	leftIcon?: FC
+	rightIcon?: FC
 }
 
-export const Input: FC<TInputProps> = ({ error, className, pt, label, ...inputProps }) => {
+export const Input: FC<TInputProps> = ({
+	error,
+	className,
+	pt,
+	label,
+	leftIcon: LeftIcon,
+	rightIcon: RightIcon,
+	...inputProps
+}) => {
 	return (
 		<div className={clsx('fox-input', pt?.container)}>
 			{label && (
-				<span>{label}</span>
+				<span className={'fox-input__label'}>{label}</span>
 			)}
-			<input {...inputProps} className={clsx(
-				'fox-input__input',
-				error && 'fox-input__input--error',
-				className)}/>
+			<div
+				className={clsx('fox-input__input-container', error && 'fox-input__input-container--error', pt?.inputContainer)}>
+				{LeftIcon && <LeftIcon/>}
+				<input {...inputProps} className={clsx(
+					'fox-input__input',
+					className)}
+				/>
+				{RightIcon && <RightIcon/>}
+			</div>
 			{error && (
 				<div className={clsx('fox-input__err-container', pt?.errContainer)}>
 					<span className="fox-input__err">{error}</span>

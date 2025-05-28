@@ -1,0 +1,13 @@
+.project-code-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    &__btn {
+        display: flex;
+        gap: 10px;
+
+        justify-content: end;
+    }
+}

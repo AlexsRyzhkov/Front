@@ -1,0 +1,40 @@
+.project-navigate-expand-list {
+    padding: 10px;
+
+    &__btn {
+        background: transparent;
+
+        width: 100%;
+
+        color: var(--color-primary-darkne);
+
+        font-size: 12px;
+        font-weight: 500;
+
+        text-transform: uppercase;
+
+        &:hover {
+
+            background: #f6f6f6;
+        }
+
+        display: flex;
+        justify-content: start;
+
+        gap: 5px;
+    }
+
+    &__btn-icon {
+        transition: 0.2s;
+        transform: rotate(-90deg) translateX(4px);
+
+        &--close {
+            transform: rotate(90deg) translateX(2px);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+}

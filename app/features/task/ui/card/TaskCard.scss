@@ -1,0 +1,42 @@
+.task-card {
+    display: flex;
+    width: 100%;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+
+    flex-direction: column;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.00), 0px 0px 1px 0px rgba(0, 0, 0, 0.01), 0px 0px 1px 0px rgba(0, 0, 0, 0.05), 0px 0px 1px 0px rgba(0, 0, 0, 0.09);
+
+
+    gap: 10px;
+
+    &__title {
+        font-size: 16px;
+        font-weight: 600;
+
+        color: var(--color-primary-dark);
+    }
+
+    &__labels {
+        display: flex;
+
+        gap: 8px;
+    }
+
+    &__footer {
+        margin-top: 6px;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+    &__footer-right {
+        display: flex;
+        gap: 8px;
+
+        justify-content: center;
+        align-items: center;
+    }
+}

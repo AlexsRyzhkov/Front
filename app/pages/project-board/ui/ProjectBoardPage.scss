@@ -1,0 +1,15 @@
+.project-board-page {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 20px 40px;
+
+    height: 100%;
+
+    &__search {
+        max-width: 300px;
+        font-size: 16px;
+    }
+}

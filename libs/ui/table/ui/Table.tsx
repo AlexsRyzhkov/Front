@@ -1,13 +1,12 @@
 import { TableColumn, ITableColumn } from "@ui-kit/table/ui/column/TableColumn";
 import { TableContent } from "@ui-kit/table/ui/content/TableContent";
-import { ReactElement, Fragment, useRef, useEffect, useState } from "react";
+import { ReactElement } from "react";
 
 import { TableFooter } from "@ui-kit/table/ui/footer/TableFooter";
 import { TableBody } from "@ui-kit/table/ui/body/TableBody";
 import { TableProvider } from "@ui-kit/table/ui/context/TableContext";
 import { TableHeader } from "@ui-kit/table/ui/header/TableHeader";
 
-import { IPaginator, TData } from "@ui-kit/table/store/TableStore.type";
 
 import '@ui-kit/table/ui/Table.scss';
 
@@ -16,16 +15,35 @@ interface ITableProps {
 	children: (ReactElement | null | boolean) | (ReactElement | null | boolean)[];
 
 	loading?: boolean;
+
 	paginator?: boolean;
-
-
+	rows?: number;
+	first?: number;
+	totalPages?: number;
 	onChangePage?: (page: number) => void;
+
+	hover?: 'row' | 'cell';
+	onRowClick?: (rowData: any) => void;
+	onCellClick?: (cellData: any) => void;
+
+	onChangeSort?: (sortData: any) => void;
 }
 
 export const Table = ({
+	data = [],
+
 	children,
 	loading,
-	...contextProps
+
+	paginator = false,
+	rows = 10,
+	first = 1,
+	totalPages = Math.ceil(data.length / rows),
+	onChangePage = () => {},
+
+	hover = 'row',
+	onRowClick = () => {},
+	onCellClick = () => {},
 }: ITableProps) => {
 	const columns: ITableColumn[] = [];
 
@@ -43,9 +61,20 @@ export const Table = ({
 
 	return (
 		<TableProvider
+			data={data}
+
 			columns={columns}
 			loading={!!loading}
-			{...contextProps}
+
+			paginator={paginator}
+			rows={rows}
+			first={first}
+			totalPages={totalPages}
+			onChangePage={onChangePage}
+
+			hover={hover}
+			onRowClick={onRowClick}
+			onCellClick={onCellClick}
 		>
 			<TableContent>
 				<TableHeader/>

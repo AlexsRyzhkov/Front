@@ -1,0 +1,19 @@
+.project-board-column-create {
+
+    &__btn {
+        width: 350px;
+        min-width: 350px;
+
+        padding: 10px 10px;
+
+        background: #5A6B8B;
+
+        &:hover {
+            background: #697a9c;
+        }
+    }
+
+    &__modal-body {
+        min-width: 400px;
+    }
+}

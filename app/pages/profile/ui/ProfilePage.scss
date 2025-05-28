@@ -1,0 +1,53 @@
+.profile-page {
+    min-height: calc(100vh - 120px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    &__avatar {
+        width: 200px;
+        height: 200px;
+
+        background: #DE360C;
+        color: white;
+
+        font-size: 96px;
+        font-weight: 600;
+
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    &__info {
+        display: flex;
+        justify-content: center;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px 20px;
+        border: 1px solid rgba(68, 84, 111, 0.3);
+        border-radius: 10px;
+    }
+
+    &__field {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+
+        font-size: 16px;
+        color: #44546F;
+
+        font-weight: 600;
+    }
+}

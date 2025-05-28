@@ -1,0 +1,44 @@
+.branch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+    min-width: 400px;
+
+    max-height: 300px;
+}
+
+.branch-item {
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
+
+    gap: 10px;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    width: 100%;
+
+    &:hover {
+        background: rgba(90, 107, 139, 0.2);
+    }
+
+    & > p {
+        font-size: 16px;
+        color: var(--color-primary);
+        font-weight: 600;
+    }
+}
+
+.branch-emtpy {
+
+    font-weight: 600;
+
+    font-size: 18px;
+
+
+    color: var(--color-primary);
+}

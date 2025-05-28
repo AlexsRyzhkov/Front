@@ -83,13 +83,27 @@ export const Paginator: FC<IPaginatorProps> = ({
 		return pages;
 	};
 
+	const onBackClick = () => {
+		if (currentPage - 1 > 0) {
+			onPageChange(currentPage - 1);
+		}
+
+		onPageChange(1);
+	};
+
+	const onNextClick = () => {
+		if (currentPage + 1 < totalPages) {
+			onPageChange(currentPage + 1);
+		}
+
+		onPageChange(totalPages);
+	};
+
 	return (
 		<motion.div className={clsx('paginator')}>
-			<PaginatorBackButton/>
-			<LayoutGroup>
-				{renderPageNumber()}
-			</LayoutGroup>
-			<PaginatorNextButton/>
+			<PaginatorBackButton onClick={onBackClick}/>
+			{renderPageNumber()}
+			<PaginatorNextButton onClick={onNextClick}/>
 		</motion.div>
 	);
 };

@@ -1,0 +1,78 @@
+.project-code-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+
+    &__header {
+        display: flex;
+        gap: 15px;
+
+        align-items: center;
+    }
+
+
+    &__type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 40px;
+        width: 160px;
+
+        gap: 10px;
+
+        border-radius: 4px;
+        border: 1px solid rgba(23, 43, 77, 0.4);
+    }
+
+    &__type-title {
+        font-weight: 600;
+        color: var(--color-primary-dark);
+    }
+
+    &__repository {
+        display: flex;
+        align-items: center;
+
+        padding: 0 20px;
+
+        gap: 10px;
+
+        height: 40px;
+
+        border-radius: 4px;
+        border: 1px solid rgba(23, 43, 77, 0.4);
+
+        user-select: none;
+    }
+
+    &__project-link {
+        color: var(--color-primary);
+        font-weight: 500;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__commits {
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+        color: rgba(23, 43, 77, 0.8);
+
+        border-radius: 4px;
+    }
+
+    &__commits-list {
+        min-height: 400px;
+
+        background: #ececec;
+        box-shadow: var(--box-shadow);
+
+        border-radius: 6px;
+    }
+}

@@ -8,10 +8,10 @@ export const Route = createRootRoute({
 
 function RootLayout() {
 	return (
-		<>
+		<div style={{ background: '#FAFBFC' }}>
 			<Outlet/>
 			<ReactQueryDevtools/>
 			<TanStackRouterDevtools/>
-		</>
+		</div>
 	);
 }

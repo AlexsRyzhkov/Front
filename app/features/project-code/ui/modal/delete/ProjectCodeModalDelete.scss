@@ -1,0 +1,28 @@
+.project-modal-delete {
+    display: flex;
+    gap: 20px;
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-direction: column;
+
+        max-width: 350px;
+
+        & > p {
+            text-align: center;
+            font-size: 24px;
+            color: #61708c;
+            font-weight: 600;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        gap: 10px;
+
+        justify-content: end;
+    }
+}

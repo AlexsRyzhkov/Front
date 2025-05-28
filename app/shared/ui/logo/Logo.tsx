@@ -6,7 +6,7 @@ import { ILogoProps } from "@shared/ui/logo/Logo.types";
 
 import '@shared/ui/logo/Logo.scss';
 
-export const Logo: FC<ILogoProps> = ({ className, variant = 'default' }) => {
+export const Logo: FC<ILogoProps> = ({ className, variant = 'default', onClick }) => {
 	return (
 		<div
 			className={clsx(
@@ -15,6 +15,7 @@ export const Logo: FC<ILogoProps> = ({ className, variant = 'default' }) => {
 				variant == 'default' && 'logo-default',
 				className,
 			)}
+			onClick={onClick}
 		>
 			<Icon className={'logo__icon'} icon={'network_intel_node'}/>
 			<span className={'logo__title'}>Foxtask</span>

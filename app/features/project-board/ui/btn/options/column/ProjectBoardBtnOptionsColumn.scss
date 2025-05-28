@@ -1,0 +1,49 @@
+.project-board-btn-option-column {
+    background: none;
+    color: #5A6B8B;
+
+    padding: 5px;
+
+    &:hover {
+        background: rgba(209, 215, 225, 0.4);
+
+        border-radius: 0;
+    }
+
+    &:active {
+        background: rgba(209, 215, 225, 0.6);
+    }
+
+    &__drop-down {
+        min-width: 200px;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: start;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    &__delete {
+        color: #fc5050;
+
+
+        width: 100%;
+
+        justify-content: start;
+        padding: 10px 20px;
+
+    }
+
+    &__update {
+        width: 100%;
+
+        justify-content: start;
+        padding: 10px 20px;
+
+        color: var(--color-primary-darkne);
+    }
+}
